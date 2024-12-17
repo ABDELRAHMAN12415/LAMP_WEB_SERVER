@@ -39,14 +39,14 @@ On Windows, use an SSH client like **PuTTY**
    directory. 
    ![Screenshot (2341)](https://github.com/user-attachments/assets/df8f7751-2f4b-415f-bd7a-03221f0dd9c7)
    o Test by creating a simple index.html in /var/www/html/ and ensuring it is accessible via 
-   http://<server-ip>/.
+   http://server-ip/.
    ![Screenshot (2345)](https://github.com/user-attachments/assets/dab5ec53-f280-4df5-872a-d12c0b471abf)
    ![Screenshot (2344)](https://github.com/user-attachments/assets/5bc85527-9591-49d2-b047-f8b7f7b09925)
 
 3. **Create a Simple Website**:
    o Replace index.html with a PHP file (e.g. index.php) that displays "Hello World!".
    ![Screenshot (2351)](https://github.com/user-attachments/assets/40432bbe-b685-4131-a7ee-1d5ef6ad7872)
-   o Verify this by accessing http://<server-ip>/ in a web browser.
+   o Verify this by accessing http://server-ip/ in a web browser.
    ![Screenshot (2349)](https://github.com/user-attachments/assets/e3957bae-7ec5-4b94-b938-f6d88d9c6b12)
 **note**: this step requires either editing the apache server configurations to make serving the .php files a higher priority over the .html files or simply deleting the html file.
    ![Screenshot (2348)](https://github.com/user-attachments/assets/0bc2ec79-89b8-46f3-92a9-05073f48f9dc)
@@ -124,7 +124,7 @@ On Windows, use an SSH client like **PuTTY**
 
 This section explains the key networking concepts that are crucial for understanding how devices communicate within a network and how remote access to cloud-based instances is achieved.
 
-1. IP Address
+### 1. IP Address
 
 **What is an IP Address?**  
 An **IP address** (Internet Protocol address) is a unique numerical identifier assigned to each device connected to a network. It is used to identify the source and destination of data packets as they travel across a network, ensuring that information reaches the correct device.
@@ -136,7 +136,7 @@ The main purpose of an IP address is to facilitate communication between devices
 - **IPv4**: The most commonly used version of IP addresses, represented in four sets of numbers (e.g., `192.168.1.1`).
 - **IPv6**: A newer version designed to solve the limitations of IPv4, represented in eight groups of hexadecimal numbers (e.g., `2001:0db8:85a3:0000:0000:8a2e:0370:7334`).
 
-2. MAC Address
+### 2. MAC Address
 
 **What is a MAC Address?**  
 A **MAC address** (Media Access Control address) is a unique identifier assigned to network interfaces for communication on the physical network layer. It is embedded in hardware (such as network cards) by the manufacturer.
@@ -147,7 +147,7 @@ The MAC address serves as a unique identifier for devices at the data link layer
 **How it Differs from an IP Address:**  
 While an IP address is used for identifying devices on a network at higher layers (network layer), the MAC address works at the data link layer. The key difference is that an IP address can change based on network configuration (e.g., DHCP), but a MAC address is fixed and hardware-specific.
 
-3. Switches, Routers, and Routing Protocols
+### 3. Switches, Routers, and Routing Protocols
 
 ### Switches
 
@@ -175,7 +175,7 @@ Routing protocols are used by routers to determine the best path for data to tra
 - **OSPF** (Open Shortest Path First): A link-state protocol that uses the cost of links to determine the best path.
 - **BGP** (Border Gateway Protocol): The protocol used to exchange routing information between different autonomous systems (AS) on the internet.
 
-4. Remote Connection to Cloud Instance
+### 4. Remote Connection to Cloud Instance
 
 ### Steps to Connect to a Cloud-Based Linux Instance via SSH
 
@@ -183,6 +183,7 @@ To connect to a cloud-based Linux instance (e.g., AWS EC2) from a remote machine
 
 Remote connections to cloud-based instances typically use **SSH (Secure Shell)**, a secure protocol for accessing remote machines over an unsecured network. SSH uses key pairs for authentication: the **public key** is stored on the cloud instance, and the **private key** stays on your local machine.
 - so you can either create the keys locally and copy the public key to the ec2 instanse or you can create the keys aas key pair in aws and download the private key to your device and attach the other to the ec2.
+
 Next step to connect, you need the **public IP address** of your instance and must ensure **port 22** is open through security settings like **firewall rules** or **security groups**.
 
    ```bash
